@@ -1,9 +1,14 @@
 boto3
 einops
+decord
 ftfy
 ipdb
+numpy<1.20
+opencv-python-headless
+pandas
 regex
 requests
+scipy
 timm
 torch==1.8.0
 torchvision==0.9.0

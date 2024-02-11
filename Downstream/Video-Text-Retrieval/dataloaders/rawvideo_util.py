@@ -42,7 +42,6 @@ class RawVideoExtractorCV2():
         assert sample_fp > -1
 
         # Samples a frame sample_fp X frames.
-        # cap = cv2.VideoCapture(video_file)
         if video_file.startswith("s3://"):
             # video_bytes = client.get(video_file)
             # assert video_bytes is not None, "Get video failed from {}".format(video_file)
@@ -52,6 +51,8 @@ class RawVideoExtractorCV2():
             presigned_url = client.generate_presigned_url(video_file, client_method ='get_object', expires_in=36000)
             assert presigned_url is not None, "Get video failed from {}".format(presigned_url)
             cap = cv2.VideoCapture(presigned_url)
+        else:
+            cap = cv2.VideoCapture(video_file)
         
         frameCount = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         fps = int(cap.get(cv2.CAP_PROP_FPS))
