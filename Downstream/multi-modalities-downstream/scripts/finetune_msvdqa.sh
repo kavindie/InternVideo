@@ -27,7 +27,7 @@ srun --async -p video -n${N_TASKS} --gres=gpu:${NUM_GPUS} \
     max_steps=-1 \
     clip=/pathto/ViT-L-14.pt \
     clip_type=kc_new \
-    load_path=/pathto/InternVideo-MM-L-14.ckpt
+    load_path="/scratch2/kat049/Git/InternVideo/Downstream/multi-modalities-downstream/InternVideo-MM-B-16.ckpt"
 
 rm batchscript-*
 

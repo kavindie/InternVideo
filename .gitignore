@@ -1,3 +1,12 @@
 __pycache__
 /venv*/
 /Downstream/Video-Text-Retrieval/data/
+/Downstream/Video-Text-Retrieval/venv/*
+/Downstream/multi-modalities-downstream/venv/*
+/Downstream/multi-modalities-downstream/Annotation/*
+out
+out_2
+ViT-L-14.pt
+Downstream/multi-modalities-downstream/InternVideo-MM-B-16.ckpt
+Downstream/multi-modalities-downstream/data/ProcessScripts/*
+Downstream/Video-Text-Retrieval/pytorch_model.bin

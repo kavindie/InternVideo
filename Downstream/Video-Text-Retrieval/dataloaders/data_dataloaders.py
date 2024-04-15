@@ -7,6 +7,7 @@ from dataloaders.dataloader_lsmdc_retrieval import LSMDC_DataLoader
 from dataloaders.dataloader_activitynet_retrieval import ActivityNet_DataLoader
 from dataloaders.dataloader_didemo_retrieval import DiDeMo_DataLoader
 from dataloaders.dataloader_vatex_retrieval import VATEX_DataLoader
+from dataloaders.data_tunnel_retrieval import Tunnel_DataLoader
 
 def dataloader_msrvtt_train(args, tokenizer):
     msrvtt_dataset = MSRVTT_TrainDataLoader(
@@ -306,6 +307,56 @@ def dataloader_vatex_test(args, tokenizer, subset="test"):
     return dataloader_msrvtt, len(vatex_testset)
     
 
+def dataloader_tunnel_train(args, tokenizer):
+    tunnel_dataset = Tunnel_DataLoader(
+        subset="train",
+        data_path=args.data_path,
+        features_path=args.features_path,
+        max_words=args.max_words,
+        feature_framerate=args.feature_framerate,
+        tokenizer=tokenizer,
+        max_frames=args.max_frames,
+        frame_order=args.train_frame_order,
+        slice_framepos=args.slice_framepos,
+    )
+
+    train_sampler = torch.utils.data.distributed.DistributedSampler(tunnel_dataset)
+    dataloader = DataLoader(
+        tunnel_dataset,
+        batch_size=args.batch_size // args.n_gpu,
+        num_workers=args.num_thread_reader,
+        pin_memory=False,
+        shuffle=(train_sampler is None),
+        sampler=train_sampler,
+        drop_last=True,
+        persistent_workers=True,
+    )
+
+    return dataloader, len(tunnel_dataset), train_sampler
+
+def dataloader_tunnel_test(args, tokenizer, subset="test"):
+    tunnel_testset = Tunnel_DataLoader(
+        subset=subset,
+        data_path=args.data_path,
+        features_path=args.features_path,
+        max_words=args.max_words,
+        feature_framerate=args.feature_framerate,
+        tokenizer=tokenizer,
+        max_frames=args.max_frames,
+        frame_order=args.eval_frame_order,
+        slice_framepos=args.slice_framepos,
+    )
+    dataloader_tunnel = DataLoader(
+        tunnel_testset,
+        batch_size=args.batch_size_val,
+        num_workers=args.num_thread_reader,
+        shuffle=False,
+        drop_last=False,
+        persistent_workers=True,
+    )
+    return dataloader_tunnel, len(tunnel_testset)
+
+
 DATALOADER_DICT = {}
 DATALOADER_DICT["msrvtt"] = {"train":dataloader_msrvtt_train, "val":dataloader_msrvtt_test, "test":None}
 DATALOADER_DICT["msvd"] = {"train":dataloader_msvd_train, "val":dataloader_msvd_test, "test":dataloader_msvd_test}
@@ -313,3 +364,4 @@ DATALOADER_DICT["lsmdc"] = {"train":dataloader_lsmdc_train, "val":dataloader_lsm
 DATALOADER_DICT["activity"] = {"train":dataloader_activity_train, "val":dataloader_activity_test, "test":None}
 DATALOADER_DICT["didemo"] = {"train":dataloader_didemo_train, "val":dataloader_didemo_test, "test":dataloader_didemo_test}
 DATALOADER_DICT["vatex"] = {"train":dataloader_vatex_train, "val":dataloader_vatex_test, "test":dataloader_vatex_test}
+DATALOADER_DICT["tunnel"] = {"train":dataloader_tunnel_train, "val":dataloader_tunnel_test, "test":dataloader_tunnel_test}

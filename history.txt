@@ -1,0 +1,1000 @@
+    6  pwd
+    7  mv t5x t5x_ignoreme
+    8  python
+    9  pip --version
+   10  pip install --update pip
+   11  pip install --upgrade pip
+   12  pip install -e scenic
+   13  pip install -e .
+   14  pip install --user -e .
+   15  python
+   16  pip install --user scenic/projects/vid2seq/requirements.txt 
+   17  pip install --user s -rcenic/projects/vid2seq/requirements.txt 
+   18  pip install --user -r scenic/projects/vid2seq/requirements.txt 
+   19  python
+   20  pip install -u -e t5x
+   21  pip install --user -e t5x
+   22  cd t5x
+   23  git branch
+   24  code t5x/setup.py
+   25  module load apptainer
+   26  apptainer run docker://continuumio/anaconda3:latest
+   27  apptainer exec docker://continuumio/anaconda3:latest python --version
+   28  apptainer run docker://continuumio/anaconda3:latest
+   29  apptainer run --nv docker://continuumio/anaconda3:latest
+   30  ls -a
+   31  rm -r scenic.egg-info/
+   32  cd ..
+   33  rm -r t5x/t5x.egg-info/
+   34  ls ~/.local/lib/python3.11/
+   35  pwd
+   36  pip --version
+   37  pip install -e scenic
+   38  pip install --upgrade pip
+   39  pip install --user --upgrade pip
+   40  pip --version
+   41  pip install -e scenic
+   42  pip install --help
+   43  pip install --user -e .
+   44  python
+   45  cd ..
+   46  pwd
+   47  git clone git@github.com:google-research/t5x.git
+   48  pip install --user -e t5x
+   49  pwd
+   50  python
+   51  pip list --user
+   52  pwd
+   53  cd ~
+   54  pwd
+   55  ll
+   56  ls
+   57  ls -la
+   58  cd .local/
+   59  ls
+   60  cd share
+   61  ls
+   62  cd ../lib
+   63  ls
+   64  cd python3.11/
+   65  ls
+   66  rm -r site-packages/
+   67  cd /scratch2/kat049/Git
+   68  ls
+   69  pip list
+   70  pip install --user -e t5x -e scenic
+   71  pip install --user -e scenic
+   72  source /scratch2/kat049/Git/scenic/venv/bin/activate
+   73  deactivate 
+   74  git status
+   75  cd t5x
+   76  git status
+   77  cd ..
+   78  mv scenic scenic_old
+   79  ll
+   80  git clone git@github.com:kavindie/scenic.git
+   81  cd scenic
+   82  code .
+   83  module load aptainer
+   84  apptainer -h
+   85  module load apptainer
+   86  apptainer run --nv docker://continuumio/anaconda3:latest
+   87  pwd
+   88  pip --version
+   89  pip install -e scenic
+   90  apt install git
+   91  sudo apt install git
+   92  apt search git
+   93  apptainer run python:3.11
+   94  module load apptainer
+   95  apptainer run python:3.11
+   96  apptainer run docker:hub.docker/python:3.11
+   97  cd ..
+   98  apptainer pull docker:python:3.11
+   99  apptainer pull docker://python:3.11
+  100  apptainer run --nv docker://python:3.11
+  101  apptainer run --nv docker://python:3.11 bash
+  102  apptainer pull --nv docker://pytorch/pytorch
+  103  apptainer pull docker://pytorch/pytorch
+  104  apptainer run --nv docker://pytorch/pytorch
+  105  apptainer
+  106  apptainer delete
+  107  apptainer oci
+  108  apptainer
+  109  apptainer instance
+  110  apptainer instance list
+  111  apptainer instance list --help
+  112  apptainer
+  113  apptainer search
+  114  apptainer search --help
+  115  apptainer delete *
+  116  ls
+  117  rm python_3.11.sif 
+  118  cd scenic
+  119  ls
+  120  cd ../t5x
+  121  ls
+  122  cd ../scenic_old/
+  123  ls
+  124  cd 
+  125  ls
+  126  cd /scratch2/kat049/Git
+  127  apptainer run --nv docker://pytorch/pytorch
+  128  rm -r ~/.apptainer/cache
+  129  rm -r ~/.apptainer/cache/
+  130  apptainer run --nv docker://pytorch/pytorch
+  131  apptainer delete docker://pytorch/pytorch
+  132  apptainer delete pytorch/pytorch
+  133  ls
+  134  rm pytorch_latest.sif
+  135  code .
+  136  conda init
+  137  conda
+  138  pip install --user  -r scenic/scenic/projects/vid2seq/requirements.txt 
+  139  pip install --user -e t5x
+  140  python
+  141  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  142  deactivate
+  143  python --version
+  144  module load python/3.9.4 
+  145  mv venv venv_3.6
+  146  python3 --version
+  147  python3 -m venv venv
+  148  . venv/bin/activate
+  149  ll
+  150  pip --version
+  151  pip install -r requirements.txt 
+  152  pip install --upgrade pip
+  153  pip install -r requirements.txt 
+  154  python -m pip
+  155  deactivate 
+  156  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  157  pip install -r requirements.txt 
+  158  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  159  cd
+  160  du
+  161  du -h | sort -h
+  162  rm -r Downloads/pycharm-*
+  163  rm -r .local/lib/python3.11/site-packages/
+  164  rm -r .cache/*
+  165  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  166  deactivate 
+  167  rm -r venv
+  168  module load python3.7
+  169  module unload 
+  170  module unload python
+  171  module list
+  172  module avail | grep python
+  173  module add python/3.7.11
+  174  python3 --version
+  175  python3 -m venv venv
+  176  . venv/bin/activate
+  177  pip install --upgrade pip
+  178  pip install -r requirements.txt 
+  179  cp requirements_init.txt requirements.in
+  180  pip install pip-tools
+  181  pip-compile
+  182  pip-compile  --resolver=backtracking
+  183  pip-compile
+  184  pip-sync
+  185  pip install --update pip
+  186  pip install --upgrade pip
+  187  pip-sync
+  188  pip install -r requirements.txt
+  189  ls
+  190  rm -r venv
+  191  deactivate 
+  192  mv venv_3.6 venv
+  193  rm requirements.in requirements.txt
+  194  mv requirements_init.txt requirements.txt 
+  195  git status
+  196  code .gitignore
+  197  git status
+  198  git add .gitignore 
+  199  git status
+  200  module load apptainer
+  201  apptainer run --nv docker://continuumio/anaconda3:latest
+  202  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  203  python3
+  204  pip list | grep torch
+  205  pip list
+  206  pip --help
+  207  /scratch2/kat049/Git/STVT/venv/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2023.22.1/pythonFiles/shell_exec.py /scratch2/kat049/Git/STVT/venv/bin/python -m pip install -U torch-tb-profiler /tmp/tmp-18137855YB3YzvIah.log
+  208  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  209  /scratch2/kat049/Git/STVT/venv/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2023.22.1/pythonFiles/shell_exec.py /scratch2/kat049/Git/STVT/venv/bin/python -m pip install -U tensorboard /tmp/tmp-18137niI8K85qRZTe.log
+  210  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  211  python
+  212  source /scratch2/kat049/Git/STVT/venv/bin/activate
+  213  pip --help
+  214  deactivate
+  215  which python
+  216  python -- version
+  217  python --version
+  218  python3 --version
+  219  module run python 3.7
+  220  module module add python3.7
+  221  module add python3.7
+  222  module add python/3.7.11 
+  223  python3 --version
+  224  python3 -m venv venv_3.7
+  225  cd /scratch2/kat049/Git/
+  226  git clone git@github.com:kavindie/VidChapters.git
+  227  module add python/3.9.4 
+  228  python3 -m venv venv
+  229  ls
+  230  rm -r venv
+  231  cd VidChapters/
+  232  cd VidChapters
+  233  python3 -m venv venv
+  234  . venv/bin/activate
+  235  pip install -r requirements.txt 
+  236  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  237  pip install -r requirements.txt 
+  238  pip install --upgrade pip
+  239  pip install -r requirements.txt 
+  240  pip install pyecharts_jupyter_installer
+  241  pip install -r requirements.txt 
+  242  pip uninstall 
+  243  pip uninstall  -a
+  244  pip uninstall  -r requirements.txt 
+  245  deactivate
+  246  rm -r venv_3.7/
+  247  python --version
+  248  python3 --version
+  249  module add python/3.7.11 
+  250  python3 --version
+  251  whcich python
+  252  which python
+  253  python3 -m venv venv_3.7
+  254  . venv_3.7/bin/activate
+  255  code requirements.in
+  256  mv requirements.txt requirements_init.txt 
+  257  history | grep pip
+  258  history | grep requirements.in
+  259  mv requirements.in requirements.txt
+  260  pip install -r requirements.txt 
+  261  pip install 'torch==1.7.1+cu101'
+  262  pip install --upgrade pip
+  263  pip install 'torch==1.7.1+cu101'
+  264  deactivate
+  265  python3 --version
+  266  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  267  deactivate
+  268  python3 --version
+  269  python3 -m venv venv_3.6
+  270  . venv_3.6/bin/activate
+  271  pip install requirements_init.txt 
+  272  pip install -r requirements_init.txt 
+  273  pip install --upgrade pip
+  274  pip install -r requirements_init.txt 
+  275  pip install -r requirements.txt 
+  276  pip install 'torch==1.7.1+cu101'
+  277  pip install 'torch==1.7.1'
+  278  deactivate
+  279  . venv_3.7/bin/activate
+  280  pip install -r requirements.txt 
+  281  pip install --default-timeout=100 future
+  282  pip install -r requirements.txt 
+  283  pip install --default-timeout=200 future
+  284  pip install -r requirements.txt 
+  285  pip install 'torch==1.7.1'
+  286  pip install torch
+  287  pip install -r requirements.txt 
+  288  pip install -r requirements.txt   --use-deprecated=legacy-resolver
+  289  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  290  pip list | grep torch
+  291  python3
+  292  pwd
+  293  cd ..
+  294  python3
+  295  cd STVT/
+  296  ls
+  297  export PYTHONPATH=$PYTHONPATH:.
+  298  python3
+  299  $PYTHONPATH
+  300  echo $PYTHONPATH
+  301  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  302  python3
+  303  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  304  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  305  /scratch2/kat049/Git/STVT/venv_3.7/bin/python
+  306  cd ..
+  307  python3
+  308  export PYTHONPATH=./$PYTHONPATH
+  309  python3
+  310  cd STVT
+  311  python3
+  312  cd ..
+  313  python3
+  314  cd STVT/STVT/
+  315  python3
+  316  import argparse
+  317  import os
+  318  from tqdm import tqdm
+  319  import time
+  320  import datetime
+  321  import torch
+  322  import torch.nn as nn
+  323  import torch.backends.cudnn as cudnn
+  324  import tensorboardX
+  325  import numpy as np
+  326  from STVT.metrics import Metric
+  327  from STVT.build_dataloader import build_dataloader
+  328  from STVT.build_model import build_model
+  329  from STVT.build_optimizer import build_optimizer
+  330  from STVT.eval import select_keyshots
+  331  import pandas as pd
+  332  from STVT.utils import (
+  333  )
+  334  pd_epoch = []
+  335  pd_batch_size = []
+  336  pd_lr = []
+  337  pd_runtime = []
+  338  pd_loss = []
+  339  pd_F_measure_k = []
+  340  def parse_args():
+  341  python3
+  342  . venv_3.7/bin/activate
+  343  python3
+  344  cd /scratch2/kat049/Git/
+  345  git clone git@github.com:kavindie/PGL-SUM.git
+  346  module add python/3.9.4 
+  347  python3 -m venv venv
+  348  rm -r venv
+  349  cd PGL-SUM/
+  350  python3 -m venv venv
+  351  cd PGL-SUM/
+  352  . venv/bin/activate
+  353  pip install torch tensorboardX tensorflow numpy h5py
+  354  pip install torch tensorboardX tensorflow numpy h5py --use-feature=2020-resolver
+  355  python model/main.py --split_index N --n_epochs E --batch_size B --video_type 'dataset_name'
+  356  python model/main.py --split_index 1 --n_epochs 50 --batch_size 64 --video_type 'TVSum'
+  357  pip install tqdm
+  358  python model/main.py --split_index 1 --n_epochs 50 --batch_size 64 --video_type 'TVSum'
+  359  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  360  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  361  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  362  /scratch2/kat049/Git/STVT/venv_3.7/bin/python
+  363  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  364  cd ../..
+  365  open 1.jpg
+  366  view 1.
+  367  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  368  cd STVT/STVT/datasets/NewDataset/
+  369  ls
+  370  mkdir ResizedImages
+  371  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  372  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  373  export PYTHONPATH=$PYTHONPATH:.
+  374  quit
+  375  close
+  376  exit
+  377  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  378  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  379  python3
+  380  pip install matplotlib
+  381  python3
+  382  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  383  python3
+  384  scp
+  385  cd ../..
+  386  ls
+  387  cd tmp/
+  388  scp C:\Users\KAT049\Downloads/AB.mp4 .
+  389  ls
+  390  cd ..
+  391  python3
+  392  pip install opencv-python
+  393  python3
+  394  /scratch2/kat049/Git/STVT/venv_3.7/bin/python /scratch2/kat049/Git/STVT/STVT/STVT/datasets/NewDataset.py
+  395  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  396  cd STVT/STVT/datasets/NewDataset/ResizedImages/
+  397  ls 1.jpg
+  398  ll
+  399  frame_1.jpg
+  400  frame_9.jpg
+  401  cd ../Images/
+  402  ls | grep .h5
+  403  rm NewDataset.h5
+  404  cd
+  405  ls
+  406  cd /scratch2/kat049
+  407  ls
+  408  cd Git/
+  409  ls
+  410  cd STVT/
+  411  ls
+  412  cd  /scratch2/kat049/Git/STVT
+  413  ls
+  414  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  415  cd STVT/STVT/datasets/
+  416  ls
+  417  cd TestDataset/
+  418  count
+  419  ls
+  420  cd Images/
+  421  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  422  python3
+  423  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  424  python
+  425  python3
+  426  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  427  python3
+  428  /scratch2/kat049/Git/STVT/venv_3.7/bin/python /scratch2/kat049/Git/STVT/STVT/STVT/datasets/processNewDataset.py
+  429  ls STVT/STVT/datasets/datasets/
+  430  ls
+  431  ls /scratch2/kat049/Git/STVT/STVT/STVT/datasets/datasets
+  432  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  433  cd ..
+  434  cd tmp
+  435  ls
+  436  ipython
+  437  python
+  438  pip install ipython
+  439  printenv > "/tmp/tmp-57037vxd1wc8sy01e.txt"
+  440  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  441  code stef.png 
+  442  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  443  . ../STVT/venv_3.7/bin/activate
+  444  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  445  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  446  cd ..
+  447  git clone git@github.com:TatsuyaShirakawa/KTS.git
+  448  python setup.py build_ext --inplace
+  449  pip freeze > venv_3.7_working_requirements.txt
+  450  ls
+  451  mv venv_3.7_working_requirements.txt STVT/
+  452  cd KTS
+  453  python setup.py build_ext --inplace
+  454  pip search cython
+  455  pip install cython
+  456  python setup.py build_ext --inplace
+  457  echo $?
+  458  python demo.py 
+  459  ipython
+  460  cat /proc/sys/fs/inotify/max_user_watches
+  461  git add .gitignore 
+  462  git status
+  463  git config --global user.name Kavindie
+  464  git config --global user.email hkkavindie@yahoo.com
+  465  git status
+  466  git rm -h
+  467  git rm --cached -r STVT/STVT/__pycache__
+  468  git rm --cached -r STVT/STVT/datasets/
+  469  git rm --cached -r STVT/STVT/models
+  470  git status
+  471  git rm --cached -r STVT/STVT/model
+  472  python setup.py build_ext --inplace
+  473  code ../KTS/stef.png 
+  474  ls ../KTS
+  475  code ../KTS/demo.py 
+  476  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  477  pip install pykeops
+  478  pip install time
+  479  cd ..
+  480  git clone git@github.com:kavindie/Ask-Anything.git
+  481  ls
+  482  cd Ask-Anything/
+  483  deactivate 
+  484  python --version
+  485  python3 --version
+  486  module add python/3.7.11 
+  487  module add python/3.9.4 
+  488  python3 --version
+  489  python3 -m venv venv
+  490  . venv/bin/activate
+  491  pip install -r video_chat2/requirements.txt 
+  492  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  493  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  494  ncidia-smi
+  495  nvidia-smi
+  496  nvidia-smi -l
+  497  pip install ruptures
+  498  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  499  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  500  export PYTHONPATH=$PYTHONPATH:../
+  501  python3
+  502  ipython
+  503  cd ..
+  504  cd KTS/
+  505  ls
+  506  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  507  export PYTHONPATH=$PYTHONPATH:../
+  508  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  509  export PYTHONPATH=$PYTHONPATH:../
+  510  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  511  export PYTHONPATH=$PYTHONPATH:../
+  512  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  513  export PYTHONPATH=$PYTHONPATH:../
+  514  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  515  export PYTHONPATH=$PYTHONPATH:../
+  516  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  517  export PYTHONPATH=$PYTHONPATH:./STVT/
+  518  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  519  cd ..
+  520  git clone git@github.com:kavindie/models.git
+  521  cd models/
+  522  ls
+  523  deactivate
+  524  module add python/3.9.4 
+  525  python3 -m venv venv
+  526  . venv/bin/activate
+  527  pip3 install tf-models-official
+  528  pip install git+git://github.com/deepmind/dmvr.git
+  529  cd ..
+  530  deactivate
+  531  git clone git@github.com:kavindie/InternVideo.git
+  532  cd VidChapters/
+  533  python3 --version
+  534  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  535  which python
+  536  deactivate
+  537  cd models/
+  538  . venv/bin/activate
+  539  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  540  cd InternVideo/
+  541  deactivate 
+  542  ls
+  543  cd Downstream/Video-Text-Retrieval/
+  544  ls
+  545  mkdir data
+  546  pwd
+  547  cd data
+  548  ls
+  549  unzip video-text-retrieval_data.zip 
+  550  cd ../../..
+  551  cd ..
+  552  ls
+  553  cd VidChapters/
+  554  ls
+  555  . venv/bin/activate
+  556  python --version
+  557  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  558  deactivate
+  559  python3 --version
+  560  python3 -m venv venv_3.6
+  561  rmdir venv_3.6/
+  562  rm -r  venv_3.6/
+  563  cd InternVideo/
+  564  python3 -m venv venv_3.6
+  565  . venv_3.6/bin/activate
+  566  pip install torch==1.8.1
+  567  pip install torchvision==0.9.0
+  568  nvidia-smi
+  569  python3
+  570  ipython
+  571  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  572  deactivate
+  573  source /scratch2/kat049/Git/VidChapters/venv/bin/activate
+  574  pip --help
+  575  pip list
+  576  cd InternVideo/Downstream/Video-Text-Retrieval/data
+  577  ls
+  578  unzip archive.zip 
+  579  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  580  ipython
+  581  cd ..
+  582  cd InternVideo/
+  583  cd Downstream/Video-Text-Retrieval/
+  584  ls
+  585  cd data
+  586  ll
+  587  unzip video-text-retrieval_data.zip 
+  588  ls
+  589  ll
+  590  TrainValVideo/
+  591  ls
+  592  cd TrainValVideo/
+  593  ls
+  594  pwd
+  595  cd ..
+  596  mkdir TrainValVideoComp
+  597  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  598  python3
+  599  nvidia-smi
+  600  /scratch2/kat049
+  601  cd /scratch2/kat049
+  602  ls
+  603  cd ..
+  604  cd kat024
+  605  ll
+  606  ll ka*
+  607  echo ka*
+  608  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  609  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  610  python3
+  611  sinteractive
+  612  sinteractive --help
+  613  ssh
+  614  cluster 
+  615  cluster --help
+  616  slurmtop
+  617  slurm -h
+  618  srun echo foo
+  619  sinteractive -h
+  620  sinteractive 
+  621  get_project_codes 
+  622  sinteractive -A OD-233566
+  623  sinteractive -g gpu -A OD-233566
+  624  sinteractive -help
+  625  sinteractive -g gpu -A OD-233566 -n 3:00:00
+  626  sinteractive -g gpu -A OD-233566 -n 3
+  627  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  628  /scratch2/kat049/Git/STVT/venv_3.7/bin/python
+  629  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  630  /scratch2/kat049/Git/STVT/venv_3.7/bin/python
+  631  . venv_3.7/bin/activate
+  632  python3 STVT/train.py --roundtimes 3
+  633  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  634  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  635  /scratch2/kat049/Git/STVT/venv_3.7/bin/python
+  636  ipytho
+  637  ipython
+  638  export PYTHONPATH=$PYTHONPATH:../
+  639  ipython
+  640  source /scratch2/kat049/Git/STVT/venv_3.7/bin/activate
+  641  export PYTHONPATH=$PYTHONPATH:../
+  642  exit
+  643  ls
+  644  cd Downloads/
+  645  ls
+  646  ll
+  647  rm Pet\ Joy\ Spa\ Grooming\ Services\ Brentwood\,\ CA\ \(310\)\ 471-0088.mp4
+  648  ll
+  649  cd ../undefined/
+  650  ls
+  651  ll
+  652  cd ..
+  653  ls
+  654  cd Desktop/
+  655  ls
+  656  du
+  657  du -h
+  658  rm *.png
+  659  ls
+  660  ll
+  661  cd ..
+  662  ls
+  663  du -h
+  664  ll
+  665  lla
+  666  ll -a
+  667  rm -r undefined
+  668  rm -r .vscode-server
+  669  rm -r .vscode-server
+  670  ll
+  671  la
+  672  du -h | sort -h
+  673  rm -r .cache .apptainer
+  674  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  675  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  676  pwd
+  677  cd Downstream/Video-Text-Retrieval/
+  678  pwd
+  679  cd data
+  680  cd MSVD/
+  681  ls
+  682  unzip
+  683  ls
+  684  unzip YouTubeClips.tar
+  685  tar YouTubeClips.tar
+  686  tar --help
+  687  tar xvf YouTubeClips.tar 
+  688  printenv > "/tmp/tmp-23323poq47t75ochs.txt"
+  689  mkdir script_running
+  690  cd script_running/
+  691  deactiavte
+  692  deactivate
+  693  module add python/3.9.4 
+  694  which python
+  695  python venv -m venv
+  696  python3 venv -m venv
+  697  python -m venv venv
+  698  . venv/bin/activate
+  699  pip install openreviw
+  700  pip install openreview
+  701  ipython
+  702  pip uninstall openreview
+  703  ipython
+  704  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  705  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  706  pip install scipy
+  707  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  708  python3
+  709  ipython
+  710  pip install ipython
+  711  ipython
+  712  cat /proc/sys/fs/inotify/max_user_watches 
+  713  printenv > "/tmp/tmp-30557hG5rPeDCK9J3.txt"
+  714  . venv_3.6/bin/activate
+  715  ll
+  716  pip list | grep torch
+  717  pip-compile
+  718  pip show timm
+  719  deactivate 
+  720  . venv_3.9/bin/activate
+  721  pip-compile 
+  722  pip-sync
+  723  cd Downstream/Video-Text-Retrieval/modules/clip_evl/
+  724  ll 
+  725  du bpe_simple_vocab_16e6.txt.gz 
+  726  du -hbpe_simple_vocab_16e6.txt.gz 
+  727  du -h bpe_simple_vocab_16e6.txt.gz 
+  728  cat bpe_simple_vocab_16e6.txt.gz 
+  729  file bpe_simple_vocab_16e6.txt.gz 
+  730  pip show torch
+  731  pip list torchvision
+  732  deactivate 
+  733  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  734  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  735  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  736  module add python/3.9.4 
+  737  which python
+  738  python -m venv venv_3.9
+  739  . venv_3.9/bin/activate
+  740  code requirements.txt
+  741  pip install pip --upgrade
+  742  mv requirements.txt requirements.in
+  743  pip install pip-tools
+  744  pip-compile
+  745  pip-sync
+  746  python -h
+  747  curl https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt
+  748  wget https://openaipublic.azureedge.net/clip/models/b8cca3fd41ae0c99ba7e8951adf17d267cdb84cd88be6f7c2e0eca1737a03836/ViT-L-14.pt
+  749  ll
+  750  Downstream/Video-Text-Retrieval/
+  751  cd Downstream/Video-Text-Retrieval/
+  752  zeroshot_scripts/eval_msvd.sh
+  753  ll zeroshot_scripts/eval_msvd.sh
+  754  chmod +x */*.sh
+  755  zeroshot_scripts/eval_msvd.sh
+  756  . zeroshot_scripts/eval_msvd.sh
+  757  pip install ftfy
+  758  pip install --upgrade pip
+  759  pip install regex
+  760  . zeroshot_scripts/eval_msvd.sh
+  761  pip install tqdm
+  762  . zeroshot_scripts/eval_msvd.sh
+  763  pip install boto3
+  764  . zeroshot_scripts/eval_msvd.sh
+  765  pip install requests
+  766  . zeroshot_scripts/eval_msvd.sh
+  767  pip install ipdb
+  768  . zeroshot_scripts/eval_msvd.sh
+  769  pip install timm
+  770  . zeroshot_scripts/eval_msvd.sh
+  771  pip install einops
+  772  . zeroshot_scripts/eval_msvd.sh
+  773  ll ../../ViT-L-14.pt
+  774  mkdir out
+  775  . zeroshot_scripts/eval_msvd.sh
+  776  cd ../..
+  777  ll
+  778  la
+  779  deactivate
+  780  nvidia-smi
+  781  sstat
+  782  man slurm
+  783  man srun
+  784  srun -p video --gres=gpu:1 --cpus-per-task=16 --quotatype=spot -N1 --job-name=zs_msvd bash -i
+  785  srun -p video --gres=gpu:1 --cpus-per-task=16 -N1 --job-name=zs_msvd bash -i
+  786  get_project_codes
+  787  srun -A OD-233566 -p video --gres=gpu:1 --cpus-per-task=16 -N1 --job-name=zs_msvd bash -i
+  788  srun -A OD-233566 --gres=gpu:1 --cpus-per-task=16 -N1 --job-name=zs_msvd bash -i
+  789  nvidia-smi
+  790  echo foo
+  791  nvidia-smi
+  792  man srun
+  793  cd Downstream/Video-Text-Retrieval/
+  794  zeroshot_scripts/eval_msvd.sh 
+  795  . zeroshot_scripts/eval_msvd.sh 
+  796  wget www.google.com.au
+  797  slurm
+  798  nvidia-smi
+  799  wget www.google.com
+  800  srun -A OD-233566 --gres=gpu:1 -N1 --pty bash -i
+  801  sinteractive -A OD-233566 -g gpu
+  802  sinteractive -A OD-233566 -g gpu
+  803  . zeroshot_scripts/eval_msvd.sh 
+  804  wget www.google.com
+  805  cd Downstream/Video-Text-Retrieval/
+  806  sinteractive -A OD-233566 -g gpu
+  807  gzip -u '/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/bpe_simple_vocab_16e6.txt.gz'
+  808  man gzip
+  809  du -h '/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/bpe_simple_vocab_16e6.txt.gz'
+  810  zcat '/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/bpe_simple_vocab_16e6.txt.gz' | head
+  811  zcat '/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/bpe_simple_vocab_16e6.txt.gz' | head 20
+  812  zcat '/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/bpe_simple_vocab_16e6.txt.gz' | head -n 20
+  813  cd /scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/modules/
+  814  ll
+  815  cat clip_kc
+  816  cat clip_kc/bpe_simple_vocab_16e6.txt.gz 
+  817  ln -s ../bpe_simple_vocab_16e6.txt.gz clip_kc/bpe_simple_vocab_16e6.txt.gz
+  818  ln -sf ../bpe_simple_vocab_16e6.txt.gz clip_kc/bpe_simple_vocab_16e6.txt.gz
+  819  cat clip_evl/bpe_simple_vocab_16e6.txt.gz 
+  820  ln -sf ../bpe_simple_vocab_16e6.txt.gz clip_evl/bpe_simple_vocab_16e6.txt.gz
+  821  git rm **.pyc
+  822  git rm --cached **.pyc
+  823  git rm --cached **/__pycache__
+  824  cd ../../..
+  825  git rm --cached **/__pycache__
+  826  pip-compile && pip-sync
+  827  srun --gres=gpu:1 --cpus-per-task=16 -N1 -pty bash -i
+  828  get-project_codes
+  829  get-project-codes
+  830  get_project_codes
+  831  srun -A OD-233566 --gres=gpu:1 --cpus-per-task=16 -N1 -pty bash -i
+  832  srun -A OD-233566 --gres=gpu:1 --cpus-per-task=16 -N1 bash -i
+  833  srun -A OD-233566 --gres=gpu:1 -N1 --pty bash -i
+  834  cd Downstream/Video-Text-Retrieval/
+  835  . zeroshot_scripts/eval_msvd.sh 
+  836  sinteractive -A OD-233566 --gres=gpu:1
+  837  sinteractive
+  838  sinteractive -A OD-233566 -g
+  839  sinteractive -A OD-233566 -g gpu
+  840  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  841  nvidia-smi
+  842  ll
+  843  nvidia-smi
+  844  tmux
+  845  cnf tmux
+  846  module tmux
+  847  module list
+  848  module 
+  849  module whatis SC
+  850  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  851  nvidia-smi
+  852  nc
+  853  man nc
+  854  squeue
+  855  squeue --me
+  856  squeue --me --name=tunnel
+  857  squeue --me --name=tunnel --states=R
+  858  squeue --me --states=R
+  859  squeue --me --states=R -h
+  860  squeue --me --states=R -h -O NodeList
+  861  nvidia-smi
+  862  squeue --me --states=R -h -O NodeList
+  863  nc b038 2222
+  864  sinteractive
+  865  get_project_codes
+  866  vim .bashrc
+  867  sinteractive -g 1
+  868  sinteractive -g gpu
+  869  echo $SLURM_ACCOUNT
+  870  vim .bashrc
+  871  man bash
+  872  module list
+  873  module load vscode
+  874  code-server
+  875  cnf code-server
+  876  vim server_start.sh
+  877  bash -h
+  878  squeue 
+  879  bash server_start.sh 
+  880  cd .vscode-server/bin
+  881  ll
+  882  cd 05047486b6df5eb8d44b2ecd70ea3bdf775fd937/
+  883  ll
+  884  cd bin/
+  885  ll
+  886  ./code-server 
+  887  sinteractive -g gpu
+  888  srun server_start.sh 
+  889  chmod +x server_start.sh 
+  890  srun server_start.sh 
+  891  sinteractive
+  892  code
+  893  module avail
+  894  module load vscode
+  895  code
+  896  man code
+  897  code -h
+  898  code tunnel
+  899  code tunnel --provider microsoft
+  900  code tunnel --help
+  901  code tunnel status
+  902  code tunnel user login --provider microsoft
+  903  code tunnel
+  904  /usr/sbin/sshd -D -p 2222 -f /dev/null -h ${HOME}/.ssh/id_ecdsa
+  905  get_project_codes 
+  906  ip
+  907  ip a
+  908  vim sshd.job
+  909  chmod +x sshd.job 
+  910  srun sshd.job
+  911  vim sshd.job 
+  912  ll .ssh
+  913  vim sshd.job 
+  914  srun sshd.job
+  915  ls
+  916  ll
+  917  cd .ssh
+  918  ls
+  919  ll
+  920  cd ..
+  921  vim sshd.job 
+  922  srun sshd.job
+  923  ll .ssh
+  924  chmod g-r o-r .ssh/bracewell_user_sshd* 
+  925  chmod g-r,o-r .ssh/bracewell_user_sshd* 
+  926  srun sshd.job
+  927  ls
+  928  ip a
+  929  ifconfig
+  930  sinteractive -g gpu
+  931  sinteractive
+  932  salloc -h
+  933  sinteractive -g gpu
+  934  sinfo
+  935  sinfo -o "%50N  %10c  %20m  %30G "
+  936  sinfo -o "%50N  %10c  %20m  %25f  %30G "
+  937  cd Downstream/Video-Text-Retrieval/
+  938  . zeroshot_scripts/eval_msvd.sh 
+  939  cd Downstream/Video-Text-Retrieval/
+  940  . zeroshot_scripts/eval_msvd.sh 
+  941  wget https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/retrieval/msvd/pytorch_model.bin
+  942  . zeroshot_scripts/eval_msvd.sh 
+  943  pip-compile && pip-sync
+  944  . zeroshot_scripts/eval_msvd.sh 
+  945  nvidia-smi
+  946  ssh b006
+  947  pip-compile && pip-sync
+  948  pip-compile --update && pip-sync
+  949  pip-compile --upgrade && pip-sync
+  950  ipython
+  951  pip-compile --upgrade && pip-sync
+  952  nvidia-smi
+  953  squeue
+  954  squeue --me
+  955  srun -h
+  956  srun -h | grep node
+  957  srun -w b006 bash -l
+  958  sinteractive
+  959  sinteractive -g gpu
+  960  mv ViT-L-14.pt /home/kat049/.cache/clip/ViT-L-14.pt
+  961  cp /home/kat049/.cache/clip/ViT-L-14.pt .
+  962  cd Downstream/Video-Text-Retrieval/
+  963  wget https://pjlab-gvm-data.oss-cn-shanghai.aliyuncs.com/internvideo/retrieval/msvd/pytorch_model.bin
+  964  scontrol
+  965  zeroshot_scripts/eval_msvd.sh 
+  966  man srun
+  967  module load tmux
+  968  tmux -at 
+  969  tmux 
+  970  module add tmux
+  971  tmux attach
+  972  vim scrpt.py
+  973  python -m pdb scrpt.py 
+  974  module add tmux
+  975  tmux at
+  976  tmux attach
+  977  module add tmux
+  978  tmux attach
+  979  cd Downstream/Video-Text-Retrieval/
+  980  cd data/MSVD/YouTubeClips/
+  981  ls
+  982  ll
+  983  ll | wc
+  984  man wc
+  985  tmux attach
+  986  module load tmux
+  987  tmux attach
+  988  /usr/bin/python /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/printEnvVariablesToFile.py /home/kat049/.vscode-server/extensions/ms-python.python-2024.0.1/pythonFiles/deactivate/bash/envVars.txt
+  989  sinteractive -g gpu
+  990  salloc --ntasks-per-node 1 -J interactive -t 2:00:00 --gres gpu --cpus-per-task=16 srun --pty /bin/bash -l
+  991  cd Downstream/Video-Text-Retrieval/
+  992  sh zeroshot_scripts/eval_msvd.sh 
+  993  sinteractive
+  994  tmux
+  995  module load tmux
+  996  tmux
+  997  cd Downstream/Video-Text-Retrieval/
+  998  module load tmux
+  999  tmux
+ 1000  tmux attach
+ 1001  gedit ~./bashrc
+ 1002  python3
+ 1003  ipython
+ 1004  history
+ 1005  history > history.txt

@@ -2,6 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import unicode_literals
 from __future__ import print_function
+import sys
 
 import torch
 import numpy as np
@@ -55,7 +56,7 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
     parser.add_argument('--negative_weighting', type=int, default=1, help='Weight the loss for intra negative')
     parser.add_argument('--n_pair', type=int, default=1, help='Num of pair to output from data loader')
 
-    parser.add_argument("--output_dir", default='/path/to/save/your/experiments/', type=str, required=True,
+    parser.add_argument("--output_dir", default='out_2', type=str, required=False,
                         help="The output directory where the model predictions and checkpoints will be written.")
     parser.add_argument("--cross_model", default="cross-base", type=str, required=False, help="Cross module")
     parser.add_argument("--init_model", default=None, type=str, required=False, help="Initial model.")
@@ -121,6 +122,41 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
     parser.add_argument("--cdcr", type=int, default=0, help="which cdcr type, refer to DRL")
     
     args = parser.parse_args()
+
+    # New additions to debug
+    args.do_eval = True
+    args.num_thread_reader = 8
+    args.n_display = 50
+    args.epochs = 5
+    args.lr = 1e-3
+    args.coef_lr=5e-3 
+    args.batch_size=1 
+    args.batch_size_val=1 
+    #args.features_path="/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/data/MSVD/YouTubeClips" 
+    #args.data_path="/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/data/MSVD" 
+    args.data_path='/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/data/Tunnel'
+    args.features_path='/scratch2/kat049/tmp/bear'
+    #args.datatype="msvd"
+    args.datatype="tunnel" 
+    args.max_words=77 
+    args.max_frames=12 
+    args.feature_framerate=1 
+    args.pretrained_clip_name="ViT-L/14" 
+    #args.slice_framepos=2 
+    args.slice_framepos=0 
+    args.loose_type = True 
+    args.freeze_layer_num=0 
+    args.expand_msrvtt_sentences 
+    args.clip_evl  = True
+    args.output_dir="out_2" 
+    args.pretrained_path="/scratch2/kat049/Git/InternVideo/Downstream/Video-Text-Retrieval/pytorch_model.bin" 
+    args.mergeclip=True 
+    args.mergeweight=0.25
+    args.subset="test"
+
+
+
+
 
     if args.sim_header == "tightTransf":
         args.loose_type = False
@@ -240,7 +276,7 @@ def init_device(args, local_rank):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu", args.rank)
 
-    n_gpu = torch.cuda.device_count()
+    n_gpu = 1 #torch.cuda.device_count()
     logger.info("device: {} n_gpu: {}".format(device, n_gpu))
     args.n_gpu = n_gpu
 
@@ -445,41 +481,57 @@ def eval_epoch(args, model, test_dataloader, device, n_gpu):
         # ----------------------------
         # 1. cache the features
         # ----------------------------
+        current_vid = 0
         for bid, batch in enumerate(test_dataloader):
             batch = tuple(t.to(device) for t in batch)
             input_ids, input_mask, segment_ids, video, video_mask = batch
+            original_video = video
+            original_mask = video_mask
+            ## My additions for multiple videos
+            current_vid += args.max_frames
+            video = original_video[:,:, current_vid-args.max_frames:current_vid,...]
+            video_mask = torch.ones(1,1,args.max_frames).to(device)
 
-            if multi_sentence_:
-                # multi-sentences retrieval means: one clip has two or more descriptions.
-                b, *_t = video.shape
-                sequence_output = model.get_sequence_output(input_ids, segment_ids, input_mask)
-                batch_sequence_output_list.append(sequence_output)
-                batch_list_t.append((input_mask, segment_ids,))
+            sequence_output, visual_output = model.get_sequence_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
 
-                s_, e_ = total_video_num, total_video_num + b
-                filter_inds = [itm - s_ for itm in cut_off_points_ if itm >= s_ and itm < e_]
+            batch_sequence_output_list.append(sequence_output)
+            batch_list_t.append((input_mask, segment_ids,))
+            
+            batch_visual_output_list.append(visual_output)
+            batch_list_v.append((video_mask,))
 
-                if len(filter_inds) > 0:
-                    video, video_mask = video[filter_inds, ...], video_mask[filter_inds, ...]
-                    visual_output = model.get_visual_output(video, video_mask)
-                    batch_visual_output_list.append(visual_output)
-                    batch_list_v.append((video_mask,))
-                total_video_num += b
-            else:
-                sequence_output, visual_output = model.get_sequence_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
+            # if multi_sentence_:
+            #     # multi-sentences retrieval means: one clip has two or more descriptions.
+            #     b, *_t = video.shape
+            #     sequence_output = model.get_sequence_output(input_ids, segment_ids, input_mask)
+            #     batch_sequence_output_list.append(sequence_output)
+            #     batch_list_t.append((input_mask, segment_ids,))
 
-                batch_sequence_output_list.append(sequence_output)
-                batch_list_t.append((input_mask, segment_ids,))
+            #     s_, e_ = total_video_num, total_video_num + b
+            #     filter_inds = [itm - s_ for itm in cut_off_points_ if itm >= s_ and itm < e_]
 
-                batch_visual_output_list.append(visual_output)
-                batch_list_v.append((video_mask,))
+            #     if len(filter_inds) > 0:
+            #         video, video_mask = video[filter_inds, ...], video_mask[filter_inds, ...]
+            #         visual_output = model.get_visual_output(video, video_mask)
+            #         batch_visual_output_list.append(visual_output)
+            #         batch_list_v.append((video_mask,))
+            #     total_video_num += b
+            # else:
+            #     sequence_output, visual_output = model.get_sequence_visual_output(input_ids, segment_ids, input_mask, video, video_mask)
+
+            #     batch_sequence_output_list.append(sequence_output)
+            #     batch_list_t.append((input_mask, segment_ids,))
+
+            #     batch_visual_output_list.append(visual_output)
+            #     batch_list_v.append((video_mask,))
 
             print("{}/{}\r".format(bid, len(test_dataloader)), end="")
 
+        
         # ----------------------------------
         # 2. calculate the similarity
         # ----------------------------------
-        if n_gpu < 1:
+        if n_gpu > 1:
             device_ids = list(range(n_gpu))
             batch_list_t_splits = []
             batch_list_v_splits = []
@@ -521,6 +573,9 @@ def eval_epoch(args, model, test_dataloader, device, n_gpu):
         sim_matrix_dsl = sim_matrix * softmax(sim_matrix, axis=0)
         sim_matrix_dsl_T = sim_matrix.T * softmax(sim_matrix.T, axis=0)
 
+    ## My additions
+    
+
     if multi_sentence_:
         logger.info("before reshape, sim matrix size: {} x {}".format(sim_matrix.shape[0], sim_matrix.shape[1]))
         cut_off_points2len_ = [itm + 1 for itm in cut_off_points_]
@@ -534,7 +589,8 @@ def eval_epoch(args, model, test_dataloader, device, n_gpu):
                     format(sim_matrix.shape[0], sim_matrix.shape[1], sim_matrix.shape[2]))
 
         tv_metrics = tensor_text_to_video_metrics(sim_matrix)
-        vt_metrics = compute_metrics(tensor_video_to_text_sim(sim_matrix))
+        #vt_metrics = compute_metrics(tensor_video_to_text_sim(sim_matrix))
+        vt_metrics = compute_metrics(sim_matrix[0])
 
         # dsl 
         cut_off_points2len_ = [itm + 1 for itm in cut_off_points_]
@@ -628,14 +684,14 @@ def main():
     if DATALOADER_DICT[args.datatype]["test"] is not None:
         test_dataloader, test_length = DATALOADER_DICT[args.datatype]["test"](args, tokenizer)
 
-    if DATALOADER_DICT[args.datatype]["val"] is not None:
-        val_dataloader, val_length = DATALOADER_DICT[args.datatype]["val"](args, tokenizer, subset="val")
-    else:
-        val_dataloader, val_length = test_dataloader, test_length
+    # if DATALOADER_DICT[args.datatype]["val"] is not None:
+    #     val_dataloader, val_length = DATALOADER_DICT[args.datatype]["val"](args, tokenizer, subset="val")
+    # else:
+    #     val_dataloader, val_length = test_dataloader, test_length
 
     ## report validation results if the ["test"] is None
-    if test_dataloader is None:
-        test_dataloader, test_length = val_dataloader, val_length
+    # if test_dataloader is None:
+    #     test_dataloader, test_length = val_dataloader, val_length
 
     if args.rank == 0:
         logger.info("***** Running test *****")
@@ -643,7 +699,7 @@ def main():
         logger.info("  Batch size = %d", args.batch_size_val)
         logger.info("  Num steps = %d", len(test_dataloader))
         logger.info("***** Running val *****")
-        logger.info("  Num examples = %d", val_length)
+        logger.info("  Num examples = %d", test_length)
 
     ## ####################################
     # train and eval

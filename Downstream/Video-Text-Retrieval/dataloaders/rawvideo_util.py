@@ -20,11 +20,13 @@ except:
     client = None
     
 class RawVideoExtractorCV2():
-    def __init__(self, centercrop=False, size=224, framerate=-1, ):
+    def __init__(self, centercrop=False, size=224, framerate=-1, slice_framepos=0,max_frames=100):
         self.centercrop = centercrop
         self.size = size
         self.framerate = framerate
         self.transform = self._transform(self.size)
+        self.slice_framepos = slice_framepos
+        self.max_frames = max_frames
 
     def _transform(self, n_px):
         return Compose([
@@ -75,18 +77,48 @@ class RawVideoExtractorCV2():
         assert len(inds) >= sample_fp
         inds = inds[:sample_fp]
 
+
         ret = True
         images, included = [], []
 
-        for sec in np.arange(start_sec, end_sec + 1):
-            if not ret: break
-            sec_base = int(sec * fps)
-            for ind in inds:
-                cap.set(cv2.CAP_PROP_POS_FRAMES, sec_base + ind)
-                ret, frame = cap.read()
+        if self.slice_framepos == 0:
+            for sec in np.arange(start_sec, end_sec + 1):
+                if len(images) > self.max_frames:
+                    break
                 if not ret: break
-                frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                images.append(preprocess(Image.fromarray(frame_rgb).convert("RGB")))
+                sec_base = int(sec * fps)
+                for ind in inds:
+                    cap.set(cv2.CAP_PROP_POS_FRAMES, sec_base + ind)
+                    ret, frame = cap.read()
+                    if not ret: break
+                    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    images.append(preprocess(Image.fromarray(frame_rgb).convert("RGB")))
+        elif self.slice_framepos == 1:
+            raise NotImplementedError()
+            for sec in np.arange(end_sec, start_sec - 1, -1):
+                if len(images) > self.max_frames:
+                    break
+                if not ret: break
+                sec_base = int(sec * fps)
+                for ind in inds:
+                    cap.set(cv2.CAP_PROP_POS_FRAMES, sec_base + ind)
+                    ret, frame = cap.read()
+                    if not ret: break
+                    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    images.append(preprocess(Image.fromarray(frame_rgb).convert("RGB")))
+        elif self.slice_Framepos ==2:
+            sample_indx = np.linspace(0, end_sec, num=self.max_frames, dtype=int)
+            for sec in sample_indx:
+                if len(images) > self.max_frames:
+                    break
+                if not ret: break
+                sec_base = int(sec * fps)
+                for ind in inds:
+                    cap.set(cv2.CAP_PROP_POS_FRAMES, sec_base + ind)
+                    ret, frame = cap.read()
+                    if not ret: break
+                    frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                    images.append(preprocess(Image.fromarray(frame_rgb).convert("RGB")))
 
         cap.release()
 

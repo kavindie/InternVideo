@@ -1,6 +1,6 @@
-srun --gres=gpu:1 --cpus-per-task=16 -N1 --job-name=zs_msvd \
+srun --gres=gpu:1 --cpus-per-task=16 -N1 --time=2:00:00 --job-name=zs_msvd \
 python -u \
-  -m pdb -c c \
+  # -m pdb -c c \
   -m main_task_retrieval \
     --do_eval \
     --num_thread_reader=8 \
@@ -25,7 +25,7 @@ python -u \
     --freeze_layer_num=0 \
     --expand_msrvtt_sentences \
     --clip_evl \
-    --output_dir="out" \
+    --output_dir="out_2" \
     --pretrained_path="pytorch_model.bin" \
     --mergeclip=true \
     --mergeweight=0.25 \
